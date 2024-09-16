@@ -1,0 +1,119 @@
+<!DOCTYPE HTML>
+<html>
+    <HEAD>
+        <TITLE>
+            REGISTERATION FORM
+        </TITLE>
+        <STYLE>
+            body{
+               
+                text-transform: uppercase;
+                font-family: Georgia, 'Times New Roman', Times, serif;
+                padding-top: 30px;
+                border: 2PX black;
+                justify-content: center;
+               align-items: center;
+               display:flex;
+            }
+            div{
+                height: 600px;
+                width:600px;
+                padding: 10px;
+                box-sizing:2px blueviolet;
+              
+                
+               
+border:2px solid black;
+               
+            }
+        </STYLE>
+    </HEAD>
+    <script>
+        function validateForm() {
+         
+          var username = document.f1.uservalue.value;
+          var password = document.f1.password.value;
+          var email = document.f1.email.value;
+          var phone = document.f1.no.value;
+    
+          var usernamePattern = /^[A-Za-z][A-Za-z0-9]{5,}$/;
+          var passwordPattern = /^.{8,}$/;
+          var emailPattern = /^[a-zA-Z0-9.]+@[a-zA-z]+.[a-zA-Z]{2,}$/;
+          var phonePattern = /^\d{10}$/;
+    
+    
+          if (!usernamePattern.test(username)) {
+            alert('Username must start with an alphabet and contain only letters and numbers.');
+            return;
+          }
+    
+          if (!passwordPattern.test(password)) {
+            alert('Password must be at least 8 characters long.');
+            return;
+          }
+    
+         
+          if (!emailPattern.test(email)) {
+            alert('enter valid email');
+            return;
+          }
+    
+          if (!phonePattern.test(phone)) {
+            alert('Phone number must be exactly 10 digits.');
+            return;
+          }
+    
+          alert('Form submitted successfully!');
+        }
+        </script>
+   <body>
+    <div>
+    <form  name="f1">
+      
+      <h1><center>Registration</center></h1>
+      <br>
+      <br>
+
+           username:
+            <input type="text" size="20" name="uservalue" placeholder="enter username"/>
+<br><br>
+      
+        
+       
+         password:
+            <input type="password" size="20" name="password"placeholder="enter password"/>
+            <br><br>
+
+    date of birth:
+            <input type="date" size="20" name="date" />
+     <br><br>
+      
+     
+        gender:
+        <input type="radio" name="g"/>male
+        <input type="radio" name="g"/>female
+        
+        <input type="radio" name="g"/>other
+       <br>
+       <br>
+        
+           email:
+            <input type="text" name="email" size="20" placeholder="enter email id "/>
+        
+        <br><br>
+        
+            phone no:
+            <input tpye="text" size="20" name="no" placeholder="enter mobile number"/>
+
+        <br><br>
+        
+        address:<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <textarea rows="2" cols="16"></textarea>
+      <br><br>
+        
+            <center><input type="submit" onclick="validateForm()"value="submit"/></center>
+        </div>
+        
+</form>
+</body>
+</html>
